@@ -1,0 +1,35 @@
+{{ define "Edit" }}
+<html>
+<h2> EDIT PROFILE </h2>
+{{ template "Toolbar"  }}
+<form method="POST" action="../Update">
+    <input type="hidden" name="id" value="{{ .ID }}"/>
+    <table>
+        <tbody>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name" value="{{ .FullName }}"/></td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td><input type="text" name="age" value="{{ .Age }}"/></td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td><input type="text" name="phone" value="{{ .Phone }}"/></td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td><input type="text" name="address" value="{{ .Address }}"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Save"/></td>
+        </tr>
+
+        </tbody>
+    </table>
+</form>
+
+</html>
+{{ end }}

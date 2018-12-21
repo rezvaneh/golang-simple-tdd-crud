@@ -1,0 +1,17 @@
+{{ define "Show" }}
+<html>
+<h2> This Profiles </h2>
+{{ template "Toolbar"  }}
+<table>
+    <tbody>
+    <tr><td>ID:</td><td>{{ .ID }}</td></tr>
+    <tr><td>Name:</td><td> {{ .FullName }} </td></tr>
+    <tr><td>Age:</td><td>{{ .Age }} </td></tr>
+    <tr><td>Phone:</td><td>{{ .Phone }} </td></tr>
+    <tr><td>Address:</td><td>{{ .Address }} </td></tr>
+    <tr><td><a href="/Edit/{{ .ID }}">Edit</a></td></tr>
+    <tr><td><a href="/Delete/{{ .ID }}">Delete</a></td></tr>
+    </tbody>
+</table>
+</html>
+{{ end }}

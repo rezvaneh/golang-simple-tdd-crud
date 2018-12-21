@@ -1,0 +1,34 @@
+{{ define "Index" }}
+<html>
+<h2> ALL PROFILES </h2>
+{{ template "Toolbar"  }}
+<form method="POST" action="Search" id="searchForm">
+    <input type="text" name="query">
+    <input type="submit" name="submit" value="Search">
+</form>
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Age</td>
+        <td>Phone</td>
+        <td>Address</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    {{ range . }}
+    <tr>
+        <td>{{ .ID }}</td>
+        <td>{{ .FullName }}</td>
+        <td>{{ .Age }} </td>
+        <td>{{ .Phone }} </td>
+        <td>{{ .Address }} </td>
+        <td><a href="/Show/{{ .ID }}">View</a></td>
+    </tr>
+    {{ end }}
+    </tbody>
+</table>
+{{ end }}
+</html>
